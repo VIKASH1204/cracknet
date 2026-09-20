@@ -1,5 +1,495 @@
 [
   {
+    "_id": "a61c978d-60a1-42ea-b0ef-22cd3122dfec",
+    "pcb_id": "PCB-904023",
+    "board_id": "PCB-904023",
+    "timestamp": "2026-09-20T14:02:01.072808+00:00",
+    "image_path": "uploads\\upload_a61c978d-60a1-42ea-b0ef-22cd3122dfec.png",
+    "result_image_path": "results\\result_a61c978d-60a1-42ea-b0ef-22cd3122dfec.png",
+    "explainability_path": "results\\explain_a61c978d-60a1-42ea-b0ef-22cd3122dfec.png",
+    "defect_count": 10,
+    "num_defects": 10,
+    "defects": [
+      {
+        "class_id": 1,
+        "class": "mousebite",
+        "class_name": "mousebite",
+        "confidence": 0.8734782934188843,
+        "box": [
+          160,
+          239,
+          186,
+          255
+        ],
+        "bbox": {
+          "x1": 160,
+          "y1": 239,
+          "x2": 186,
+          "y2": 255
+        },
+        "severity_score": 46.2,
+        "severity_level": "Medium",
+        "severity": "MEDIUM",
+        "learned_severity_score": 48.9
+      },
+      {
+        "class_id": 2,
+        "class": "short",
+        "class_name": "short",
+        "confidence": 0.7900500297546387,
+        "box": [
+          262,
+          306,
+          299,
+          321
+        ],
+        "bbox": {
+          "x1": 262,
+          "y1": 306,
+          "x2": 299,
+          "y2": 321
+        },
+        "severity_score": 73.0,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 77.5
+      },
+      {
+        "class_id": 3,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.7528305649757385,
+        "box": [
+          275,
+          208,
+          301,
+          228
+        ],
+        "bbox": {
+          "x1": 275,
+          "y1": 208,
+          "x2": 301,
+          "y2": 228
+        },
+        "severity_score": 51.9,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 59.5
+      },
+      {
+        "class_id": 4,
+        "class": "open",
+        "class_name": "open",
+        "confidence": 0.7455649971961975,
+        "box": [
+          453,
+          53,
+          487,
+          68
+        ],
+        "bbox": {
+          "x1": 453,
+          "y1": 53,
+          "x2": 487,
+          "y2": 68
+        },
+        "severity_score": 71.7,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 77.2
+      },
+      {
+        "class_id": 5,
+        "class": "short",
+        "class_name": "short",
+        "confidence": 0.7075758576393127,
+        "box": [
+          254,
+          132,
+          289,
+          146
+        ],
+        "bbox": {
+          "x1": 254,
+          "y1": 132,
+          "x2": 289,
+          "y2": 146
+        },
+        "severity_score": 70.9,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 77.7
+      },
+      {
+        "class_id": 6,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.6863896250724792,
+        "box": [
+          127,
+          112,
+          152,
+          132
+        ],
+        "bbox": {
+          "x1": 127,
+          "y1": 112,
+          "x2": 152,
+          "y2": 132
+        },
+        "severity_score": 50.5,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 58.9
+      },
+      {
+        "class_id": 7,
+        "class": "short",
+        "class_name": "short",
+        "confidence": 0.6853955388069153,
+        "box": [
+          150,
+          214,
+          185,
+          242
+        ],
+        "bbox": {
+          "x1": 150,
+          "y1": 214,
+          "x2": 185,
+          "y2": 242
+        },
+        "severity_score": 73.2,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 79.9
+      },
+      {
+        "class_id": 8,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.5945528745651245,
+        "box": [
+          49,
+          192,
+          76,
+          211
+        ],
+        "bbox": {
+          "x1": 49,
+          "y1": 192,
+          "x2": 76,
+          "y2": 211
+        },
+        "severity_score": 48.7,
+        "severity_level": "Medium",
+        "severity": "MEDIUM",
+        "learned_severity_score": 59.9
+      },
+      {
+        "class_id": 9,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.549751877784729,
+        "box": [
+          192,
+          172,
+          221,
+          194
+        ],
+        "bbox": {
+          "x1": 192,
+          "y1": 172,
+          "x2": 221,
+          "y2": 194
+        },
+        "severity_score": 48.7,
+        "severity_level": "Medium",
+        "severity": "MEDIUM",
+        "learned_severity_score": 60.8
+      },
+      {
+        "class_id": 10,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.511577308177948,
+        "box": [
+          171,
+          112,
+          196,
+          132
+        ],
+        "bbox": {
+          "x1": 171,
+          "y1": 112,
+          "x2": 196,
+          "y2": 132
+        },
+        "severity_score": 47.0,
+        "severity_level": "Medium",
+        "severity": "MEDIUM",
+        "learned_severity_score": 59.3
+      }
+    ],
+    "decision": "REWORK",
+    "decision_reason": "6 high-severity defect(s) detected.",
+    "learned_decision": null,
+    "learned_decision_probs": null,
+    "severity_counts": {
+      "Low": 0,
+      "Medium": 4,
+      "High": 6,
+      "Critical": 0
+    },
+    "highest_severity": "HIGH",
+    "processing_time_ms": 4157.59
+  },
+  {
+    "_id": "90ef939b-b6e3-414f-b5c5-56dffbff0d89",
+    "pcb_id": "PCB-819391",
+    "board_id": "PCB-819391",
+    "timestamp": "2026-09-20T14:00:41.257881+00:00",
+    "image_path": "uploads\\upload_90ef939b-b6e3-414f-b5c5-56dffbff0d89.png",
+    "result_image_path": "results\\result_90ef939b-b6e3-414f-b5c5-56dffbff0d89.png",
+    "explainability_path": "results\\explain_90ef939b-b6e3-414f-b5c5-56dffbff0d89.png",
+    "defect_count": 10,
+    "num_defects": 10,
+    "defects": [
+      {
+        "class_id": 1,
+        "class": "mousebite",
+        "class_name": "mousebite",
+        "confidence": 0.8734782934188843,
+        "box": [
+          160,
+          239,
+          186,
+          255
+        ],
+        "bbox": {
+          "x1": 160,
+          "y1": 239,
+          "x2": 186,
+          "y2": 255
+        },
+        "severity_score": 46.2,
+        "severity_level": "Medium",
+        "severity": "MEDIUM",
+        "learned_severity_score": 48.9
+      },
+      {
+        "class_id": 2,
+        "class": "short",
+        "class_name": "short",
+        "confidence": 0.7900500297546387,
+        "box": [
+          262,
+          306,
+          299,
+          321
+        ],
+        "bbox": {
+          "x1": 262,
+          "y1": 306,
+          "x2": 299,
+          "y2": 321
+        },
+        "severity_score": 73.0,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 77.5
+      },
+      {
+        "class_id": 3,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.7528305649757385,
+        "box": [
+          275,
+          208,
+          301,
+          228
+        ],
+        "bbox": {
+          "x1": 275,
+          "y1": 208,
+          "x2": 301,
+          "y2": 228
+        },
+        "severity_score": 51.9,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 59.5
+      },
+      {
+        "class_id": 4,
+        "class": "open",
+        "class_name": "open",
+        "confidence": 0.7455649971961975,
+        "box": [
+          453,
+          53,
+          487,
+          68
+        ],
+        "bbox": {
+          "x1": 453,
+          "y1": 53,
+          "x2": 487,
+          "y2": 68
+        },
+        "severity_score": 71.7,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 77.2
+      },
+      {
+        "class_id": 5,
+        "class": "short",
+        "class_name": "short",
+        "confidence": 0.7075758576393127,
+        "box": [
+          254,
+          132,
+          289,
+          146
+        ],
+        "bbox": {
+          "x1": 254,
+          "y1": 132,
+          "x2": 289,
+          "y2": 146
+        },
+        "severity_score": 70.9,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 77.7
+      },
+      {
+        "class_id": 6,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.6863896250724792,
+        "box": [
+          127,
+          112,
+          152,
+          132
+        ],
+        "bbox": {
+          "x1": 127,
+          "y1": 112,
+          "x2": 152,
+          "y2": 132
+        },
+        "severity_score": 50.5,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 58.9
+      },
+      {
+        "class_id": 7,
+        "class": "short",
+        "class_name": "short",
+        "confidence": 0.6853955388069153,
+        "box": [
+          150,
+          214,
+          185,
+          242
+        ],
+        "bbox": {
+          "x1": 150,
+          "y1": 214,
+          "x2": 185,
+          "y2": 242
+        },
+        "severity_score": 73.2,
+        "severity_level": "High",
+        "severity": "HIGH",
+        "learned_severity_score": 79.9
+      },
+      {
+        "class_id": 8,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.5945528745651245,
+        "box": [
+          49,
+          192,
+          76,
+          211
+        ],
+        "bbox": {
+          "x1": 49,
+          "y1": 192,
+          "x2": 76,
+          "y2": 211
+        },
+        "severity_score": 48.7,
+        "severity_level": "Medium",
+        "severity": "MEDIUM",
+        "learned_severity_score": 59.9
+      },
+      {
+        "class_id": 9,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.549751877784729,
+        "box": [
+          192,
+          172,
+          221,
+          194
+        ],
+        "bbox": {
+          "x1": 192,
+          "y1": 172,
+          "x2": 221,
+          "y2": 194
+        },
+        "severity_score": 48.7,
+        "severity_level": "Medium",
+        "severity": "MEDIUM",
+        "learned_severity_score": 60.8
+      },
+      {
+        "class_id": 10,
+        "class": "spurious_copper",
+        "class_name": "spurious_copper",
+        "confidence": 0.511577308177948,
+        "box": [
+          171,
+          112,
+          196,
+          132
+        ],
+        "bbox": {
+          "x1": 171,
+          "y1": 112,
+          "x2": 196,
+          "y2": 132
+        },
+        "severity_score": 47.0,
+        "severity_level": "Medium",
+        "severity": "MEDIUM",
+        "learned_severity_score": 59.3
+      }
+    ],
+    "decision": "REWORK",
+    "decision_reason": "6 high-severity defect(s) detected.",
+    "learned_decision": null,
+    "learned_decision_probs": null,
+    "severity_counts": {
+      "Low": 0,
+      "Medium": 4,
+      "High": 6,
+      "Critical": 0
+    },
+    "highest_severity": "HIGH",
+    "processing_time_ms": 4739.91
+  },
+  {
     "_id": "6c815bf5-e285-4944-aed4-97ecf416310c",
     "pcb_id": "PCB-288211",
     "board_id": "PCB-288211",
