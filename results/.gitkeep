@@ -1,0 +1,2 @@
+# Annotated result images and explainability overlays are saved here.
+# Served at /static/results by FastAPI.

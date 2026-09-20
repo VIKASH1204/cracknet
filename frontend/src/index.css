@@ -1,0 +1,566 @@
+/* ==========================================================================
+   CRACKXNET — INDUSTRIAL PCB QUALITY CONTROL SYSTEM
+   Clean, professional factory QC workstation theme
+   ========================================================================== */
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+:root {
+  --qc-bg: #f3f5f8;
+  --qc-surface: #ffffff;
+  --qc-sidebar: #0f172a;
+  --qc-sidebar-hover: #1e293b;
+  --qc-sidebar-active: #2563eb;
+  --qc-border: #e2e8f0;
+  --qc-border-subtle: #cbd5e1;
+  --qc-text-main: #0f172a;
+  --qc-text-muted: #64748b;
+  --qc-text-dim: #94a3b8;
+
+  /* Decision Colors */
+  --qc-pass: #059669;
+  --qc-pass-bg: #ecfdf5;
+  --qc-pass-border: #a7f3d0;
+  --qc-rework: #d97706;
+  --qc-rework-bg: #fffbeb;
+  --qc-rework-border: #fde68a;
+  --qc-reject: #dc2626;
+  --qc-reject-bg: #fef2f2;
+  --qc-reject-border: #fecaca;
+
+  /* Severity Colors */
+  --qc-sev-low: #0284c7;
+  --qc-sev-med: #eab308;
+  --qc-sev-high: #f97316;
+  --qc-sev-crit: #ef4444;
+
+  /* Layout */
+  --qc-navbar-h: 60px;
+  --qc-sidebar-w: 250px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--qc-bg);
+  color: var(--qc-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Monospace font for telemetry, IDs, coordinates */
+.font-mono {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+/* --------------------------------------------------------------------------
+   App Layout
+   -------------------------------------------------------------------------- */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.content-area {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Top Navbar
+   -------------------------------------------------------------------------- */
+.qc-navbar {
+  height: var(--qc-navbar-h);
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--qc-border);
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-brand-title .brand-sub {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--qc-text-muted);
+  letter-spacing: normal;
+  border-left: 1px solid var(--qc-border);
+  padding-left: 0.5rem;
+}
+
+/* Status Pill */
+.status-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.status-pill-online {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.status-pill-offline {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar
+   -------------------------------------------------------------------------- */
+.qc-sidebar {
+  width: var(--qc-sidebar-w);
+  background-color: var(--qc-sidebar);
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: width 0.2s ease;
+}
+
+.sidebar-header {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0.75rem 0.5rem;
+  margin: 0;
+  flex: 1;
+}
+
+.sidebar-item {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.sidebar-link:hover {
+  background-color: var(--qc-sidebar-hover);
+  color: #ffffff;
+}
+
+.sidebar-link.active {
+  background-color: var(--qc-sidebar-active);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-link i {
+  font-size: 1.1rem;
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  color: var(--qc-text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Cards
+   -------------------------------------------------------------------------- */
+.qc-card {
+  background-color: var(--qc-surface);
+  border: 1px solid var(--qc-border);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.qc-card-header {
+  padding: 0.85rem 1.15rem;
+  background-color: #fafbfc;
+  border-bottom: 1px solid var(--qc-border);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qc-card-body {
+  padding: 1.15rem;
+}
+
+/* --------------------------------------------------------------------------
+   KPI Status Cards
+   -------------------------------------------------------------------------- */
+.kpi-card {
+  background-color: var(--qc-surface);
+  border: 1px solid var(--qc-border);
+  border-radius: 8px;
+  padding: 1.15rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+}
+
+.kpi-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--card-accent, #3b82f6);
+}
+
+.kpi-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--qc-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.kpi-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--qc-text-main);
+  line-height: 1.2;
+}
+
+.kpi-subtext {
+  font-size: 0.75rem;
+  color: var(--qc-text-muted);
+  margin-top: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   Quality Decision Badges
+   -------------------------------------------------------------------------- */
+.decision-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+}
+
+.decision-badge-lg {
+  font-size: 1.15rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+}
+
+.decision-badge.decision-pass {
+  background-color: var(--qc-pass-bg);
+  color: var(--qc-pass);
+  border: 1px solid var(--qc-pass-border);
+}
+
+.decision-badge.decision-rework {
+  background-color: var(--qc-rework-bg);
+  color: var(--qc-rework);
+  border: 1px solid var(--qc-rework-border);
+}
+
+.decision-badge.decision-reject {
+  background-color: var(--qc-reject-bg);
+  color: var(--qc-reject);
+  border: 1px solid var(--qc-reject-border);
+}
+
+/* Pulse dot on decisions */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.decision-pass .pulse-dot { background-color: var(--qc-pass); }
+.decision-rework .pulse-dot { background-color: var(--qc-rework); }
+.decision-reject .pulse-dot { background-color: var(--qc-reject); }
+
+/* --------------------------------------------------------------------------
+   Severity Badges
+   -------------------------------------------------------------------------- */
+.sev-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.sev-badge.sev-low {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.sev-badge.sev-medium {
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.sev-badge.sev-high {
+  background-color: #ffedd5;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+.sev-badge.sev-critical {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+/* --------------------------------------------------------------------------
+   Industrial Tables
+   -------------------------------------------------------------------------- */
+.qc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.qc-table th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--qc-border);
+  text-align: left;
+}
+
+.qc-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--qc-border);
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.qc-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Inspection Image Viewer
+   -------------------------------------------------------------------------- */
+.inspection-viewer {
+  position: relative;
+  background-color: #0b0f19;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  border: 1px solid #334155;
+}
+
+.inspection-canvas-wrapper {
+  position: relative;
+  max-width: 100%;
+  max-height: 600px;
+  display: inline-block;
+}
+
+.inspection-img {
+  display: block;
+  max-width: 100%;
+  max-height: 560px;
+  object-fit: contain;
+}
+
+/* SVG overlay for bounding boxes */
+.bbox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Drag & Drop Zone
+   -------------------------------------------------------------------------- */
+.upload-dropzone {
+  border: 2px dashed var(--qc-border-subtle);
+  border-radius: 8px;
+  background-color: #f8fafc;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone.active {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+/* --------------------------------------------------------------------------
+   Camera Viewport
+   -------------------------------------------------------------------------- */
+.camera-container {
+  position: relative;
+  background-color: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #334155;
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camera-crosshairs {
+  position: absolute;
+  inset: 15%;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.25);
+}
+
+.camera-crosshairs::before,
+.camera-crosshairs::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.camera-crosshairs::before {
+  top: 50%;
+  left: calc(50% - 10px);
+  width: 20px;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.camera-crosshairs::after {
+  left: 50%;
+  top: calc(50% - 10px);
+  height: 20px;
+  width: 2px;
+  transform: translateX(-50%);
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Controls & Helpers
+   -------------------------------------------------------------------------- */
+.btn-industrial {
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.led-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+}
+
+.led-green {
+  background-color: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.led-amber {
+  background-color: #f59e0b;
+  box-shadow: 0 0 6px #f59e0b;
+}
+
+.led-red {
+  background-color: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

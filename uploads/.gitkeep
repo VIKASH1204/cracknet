@@ -1,0 +1,2 @@
+# Drop crackxnet_best.pth here.
+# This directory is served at /static/uploads by FastAPI.

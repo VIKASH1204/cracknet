@@ -1,0 +1,9 @@
+{
+  "confidence_threshold": 0.75,
+  "iou_threshold": 0.45,
+  "station_id": "QC-01",
+  "line_id": "Line A",
+  "input_resolution": "416x416",
+  "alert_sound": true,
+  "conveyor_interval_sec": 3
+}
