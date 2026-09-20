@@ -1,0 +1,9 @@
+CrackNet Project
+
+This file marks the project root for the CrackNet PCB defect inspection repository.
+
+Repository purpose:
+- PCB defect detection and classification
+- FastAPI backend
+- React frontend dashboard
+- Local inspection history and reporting
